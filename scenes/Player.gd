@@ -109,7 +109,7 @@ func _physics_process(delta):
 		can_second_jump = false
 		
 	# Crouch
-	if (is_crouch and test_move(global_transform, Vector2(0, -11))) or (is_on_floor() and Input.is_action_pressed('ui_down')):
+	if (is_crouch and test_move(transform, Vector2(0, -11))) or (is_on_floor() and Input.is_action_pressed('ui_down')):
 		right_dash_counter = dash_time
 		left_dash_counter = dash_time
 		
