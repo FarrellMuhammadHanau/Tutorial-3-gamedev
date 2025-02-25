@@ -53,7 +53,7 @@ func _physics_process(delta):
 			$Sprite2D.region_rect = stand
 	
 	# Dash right
-	if not is_crouch and right_dash_counter < dash_time:
+	if right_dash_counter < dash_time:
 		right_dash_counter += 1
 		velocity.x = dash_speed
 		if right_dash_counter == dash_time:
@@ -62,7 +62,7 @@ func _physics_process(delta):
 		return
 	
 	# Dash left
-	if not is_crouch and left_dash_counter < dash_time:
+	if left_dash_counter < dash_time:
 		left_dash_counter += 1
 		velocity.x = -dash_speed
 		if left_dash_counter == dash_time:
@@ -80,9 +80,7 @@ func _physics_process(delta):
 	
 	# Double click
 	if Input.is_action_just_pressed("ui_right"):
-		print("click")
-		if direction == ">" and right_click_interval < max_double_click_interval:
-			print("double click")
+		if not is_crouch and direction == ">" and right_click_interval < max_double_click_interval:
 			is_dash = true
 			right_click_interval = max_double_click_interval
 			right_dash_counter = 0
@@ -92,9 +90,7 @@ func _physics_process(delta):
 			$Sprite2D.flip_h = false
 	
 	if Input.is_action_just_pressed("ui_left"):
-		print("click")
-		if direction == "<" and left_click_interval < max_double_click_interval:
-			print("double click")
+		if not is_crouch and direction == "<" and left_click_interval < max_double_click_interval:
 			is_dash = true
 			left_click_interval = max_double_click_interval
 			left_dash_counter = 0
