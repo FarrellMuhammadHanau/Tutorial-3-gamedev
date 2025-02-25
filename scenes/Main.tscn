@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsyfep1odrxje"]
+[gd_scene load_steps=5 format=3 uid="uid://dsyfep1odrxje"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Ground.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://c3jss60c5y5to" path="res://scenes/Ground.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://0h6vdpbwr8lw" path="res://scenes/Player.tscn" id="1_4g7mu"]
+[ext_resource type="Script" path="res://scenes/area_2d.gd" id="3_3acxn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0w75"]
+size = Vector2(5000, 18)
 
 [node name="Root" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4g7mu")]
+position = Vector2(80, 4)
 
 [node name="Ground" parent="." instance=ExtResource("1")]
 position = Vector2(507.708, 363.86)
@@ -12,3 +20,14 @@ position = Vector2(789.149, 294.054)
 
 [node name="Ground3" parent="." instance=ExtResource("1")]
 position = Vector2(225.95, 294.562)
+
+[node name="Ground4" parent="." instance=ExtResource("1")]
+position = Vector2(906, 154)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(201, 25)
+script = ExtResource("3_3acxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(251, 657)
+shape = SubResource("RectangleShape2D_d0w75")

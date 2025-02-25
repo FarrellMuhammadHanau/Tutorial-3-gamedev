@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://0h6vdpbwr8lw"]
+
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_v1oos"]
+[ext_resource type="Texture2D" uid="uid://d2to1aj6m7mgl" path="res://assets/kenney_platformercharacters/PNG/Adventurer/adventurer_tilesheet.png" id="2_hxvda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25cjt"]
+size = Vector2(42, 77)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v1oos")
+gravity = 1000.0
+jump_speed = -450
+max_double_click_interval = 15
+dash_speed = 900
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.01301, 1.01881)
+texture = ExtResource("2_hxvda")
+region_enabled = true
+region_rect = Rect2(410, 238, 60, 92)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_25cjt")
