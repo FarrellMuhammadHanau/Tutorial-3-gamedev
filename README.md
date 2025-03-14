@@ -23,3 +23,20 @@ Referensi: <br>
 	4. https://forum.godotengine.org/t/flipping-sprite-around/40427 <br>
 
 # Tutorial 5
+Pada tutorial ini, saya telah menambahkan: <br>
+Player: <br>
+Saya menambahkan health pada player dan signal take_damage untuk mengurangi health.
+
+[Knight](https://oco.itch.io/medieval-fantasy-character-pack?download): <br>
+1. Knight dapat menyerang player jika berada dihadapannya dan dapat mengurangi health player. Saya menggunakan Area2D untuk deteksi Player, lalu dicek apakah player berada didepan knight atau tidak dengan variable direction dan posisi relatif. Setelah itu jika player berada di depan knight maka knight akan emit signal take damage ke player.
+2. Knight memiliki 2 animasi yaitu run dan attack. Run dijalankan ketika knight berlari dan attack dijalankan ketika knight menyerang player.
+3. Knight memiliki 2 AudioStreamPlayer yaitu AttackSound untuk menyerang dan WalkingSound untuk berjalan/berlari.
+
+AttackSound: <br>
+Saya mendownload sfx impact dari [kenney](https://kenney.nl/assets/impact-sounds) dalam bentuk mav, lalu saya convert menjadi ogg dengan [sumber](https://convertio.co/wav-ogg/) agar dapat melakukan loop.
+
+WalkSound: <br>
+Saya mendownload sfx walk on snow dari [freesound](https://freesound.org/people/lwdickens/sounds/261224/), lalu menggunakan Audacity untuk memotong sfx pada bagian yang tepat. Setelah itu saya convert menjadi ogg dengan [sumber](https://convertio.co/wav-ogg/) agar dapat melakukan loop.
+
+Backsound: <br>
+Saya mendownload backsound medieval dari [freesound](https://freesound.org/people/gertraut_hecher/sounds/564024/) dalam bentuk mav, lalu saya convert menjadi ogg dengan [sumber](https://convertio.co/wav-ogg/) agar dapat melakukan loop.
