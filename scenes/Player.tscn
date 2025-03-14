@@ -22,3 +22,5 @@ region_rect = Rect2(410, 238, 60, 92)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_25cjt")
+
+[connection signal="take_damage" from="." to="." method="_on_take_damage"]

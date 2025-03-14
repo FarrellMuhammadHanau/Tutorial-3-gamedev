@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var max_double_click_interval = 10
 @export var dash_time = 15
 @export var dash_speed = 800
+@export var health = 100
+
+signal take_damage(damage:int)
 
 var can_second_jump
 const stand = Rect2(410, 238, 60, 92)
@@ -135,3 +138,9 @@ func _physics_process(delta):
 
 	# "move_and_slide" already takes delta time into account.
 	move_and_slide()
+
+
+func _on_take_damage(damage: int) -> void:
+	health -= damage
+	if health <= 0:
+		get_tree().reload_current_scene()
